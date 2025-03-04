@@ -1,0 +1,116 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 30,
+    "spacing": 4,
+    "margin-top": 4,
+    "margin-left": 4,
+    "margin-right": 4,
+
+    "modules-left": [
+        "hyprland/workspaces#roman",
+        "hyprland/submap"
+    ],
+
+    "modules-center": [
+        "clock#time"
+    ],
+
+    "modules-right": [
+        "pulseaudio",
+        "network",
+        "cpu",
+        "memory",
+        "temperature",
+        "battery",
+        "tray"
+    ],
+
+    "hyprland/workspaces#roman": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "format": "{icon}",
+        "persistent-workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": []
+        },
+        "format-icons": {
+            "1": "Ⅰ",
+            "2": "Ⅱ",
+            "3": "Ⅲ", 
+            "4": "Ⅳ", 
+            "5": "Ⅴ", 
+            "6": "Ⅵ", 
+            "7": "Ⅶ", 
+            "8": "Ⅷ", 
+            "9": "Ⅸ", 
+            "10": "Ⅹ"
+        }
+    },
+
+    "hyprland/submap": {
+        "format": "{}",
+        "max-length": 30,
+        "tooltip": false
+    },
+
+    "clock#time": {
+        "format": "{:%H:%M}",
+        "tooltip": false,
+        "interval": 1
+    },
+
+    "cpu": {
+        "format": "Σ {usage}%",
+        "tooltip": false,
+        "interval": 2
+    },
+
+    "memory": {
+        "format": "🧠 {used:0.1f}GB",
+        "tooltip-format": "{used:0.1f}GB/{total:0.1f}GB used",
+        "interval": 2
+    },
+
+    "temperature": {
+        "critical-threshold": 80,
+        "format": "🌡️ {temperatureC}°C",
+        "format-critical": "🔥 {temperatureC}°C"
+    },
+
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "🔋 {capacity}%",
+        "format-charging": "⚡ {capacity}%",
+        "format-plugged": "🔌 {capacity}%"
+    },
+
+    "network": {
+        "interface": "wlan0",
+        "format-wifi": "📶",
+        "format-ethernet": "🌐",
+        "format-disconnected": "❌",
+        "tooltip-format": "{ifname} via {gwaddr}",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%)",
+        "tooltip-format-ethernet": "{ifname}",
+        "tooltip-format-disconnected": "Disconnected"
+    },
+
+    "pulseaudio": {
+        "format": "🔊 {volume}%",
+        "format-bluetooth": "🎧 {volume}%",
+        "format-muted": "🔇",
+        "on-click": "pavucontrol"
+    },
+
+    "tray": {
+        "icon-size": 18,
+        "spacing": 10
+    }
+}

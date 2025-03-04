@@ -1,0 +1,92 @@
+/* Colors from wallpaper */
+@define-color background    rgba(12, 12, 12, 0.8);
+@define-color background_alt rgba(40, 40, 40, 0.9);
+@define-color text          #FFFFFF;
+@define-color text_alt      #CCCCCC;
+@define-color accent        #8B0000;  /* Deep burgundy */
+@define-color highlight     #36656B;  /* Muted teal */
+@define-color online_green  #228B22;  /* Forest green for online */
+@define-color offline_red   #8B0000;  /* Crimson red for offline */
+
+* {
+    border: none;
+    border-radius: 8px;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    text-shadow: none;
+    icon-shadow: none;
+    font-family: "D2Coding";
+    font-size: 10px;
+}
+
+#waybar {
+    background: transparent;
+    color: @text;
+    padding: 0px;
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+    margin: 2px;
+}
+
+#workspaces,
+#mode,
+#window,
+#pulseaudio,
+#network,
+#memory,
+#cpu,
+#temperature,
+#battery,
+#tray,
+#idle_inhibitor,
+#clock {
+    background-color: @background_alt;
+    color: @text;
+    padding: 0 8px;
+    margin: 0 2px;
+    border-radius: 8px;
+}
+
+#workspaces button {
+    background-color: transparent;
+    color: @text_alt;
+    padding: 0 4px;
+    margin: 0 1px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+#workspaces button.active {
+    background-color: @accent;
+    color: @text;
+}
+
+#network {
+    background-color: @online_green;
+}
+
+#network.disconnected {
+    background-color: @offline_red;
+}
+
+#clock.time {
+    background-color: @accent;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+#tray {
+    background-color: @background_alt;
+}
+
+@keyframes blink {
+    to {
+        background-color: @text;
+        color: @background;
+    }
+}
